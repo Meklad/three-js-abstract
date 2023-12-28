@@ -2,6 +2,8 @@ import * as THREE from 'three'
 import gsap from 'gsap';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
 import './style.css'
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 // Create Canavas
 const canvas = document.querySelector(".webgl");
