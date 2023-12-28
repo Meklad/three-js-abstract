@@ -63,5 +63,5 @@ const loop = () => {
   renderer.render(scene, camera);
   requestAnimationFrame(loop);
 }
-
+console.log("updated");
 loop();
