@@ -42,14 +42,14 @@ const detail = 12;
 const geometry = new THREE.IcosahedronGeometry(1, detail);
 const loader = new THREE.TextureLoader();
 const material = new THREE.MeshStandardMaterial({
-  map: loader.load("/static/textures/earth_day.jpg")
+  map: loader.load("/assets/images/textures/earth_day.jpg")
 });
 const earthMesh = new THREE.Mesh(geometry, material);
 localGroup.add(earthMesh);
 
 // Create Earth Ligth
 const earthLightMaterial = new THREE.MeshBasicMaterial({
-  map: loader.load("/static/textures/earth_light.jpg"),
+  map: loader.load("/assets/images/textures/earth_light.jpg"),
   blending: THREE.AdditiveBlending
 });
 const earthLightMesh = new THREE.Mesh(geometry, earthLightMaterial);
@@ -57,7 +57,7 @@ localGroup.add(earthLightMesh);
 
 // Create Earth Cloude Mesh
 const earthCloudeMaterial = new THREE.MeshBasicMaterial({
-  map: loader.load("/static/textures/earth_clouds.jpg"),
+  map: loader.load("/assets/images/textures/earth_clouds.jpg"),
   // transparent: true,
   opacity: 0.1,
   blending: THREE.AdditiveBlending
@@ -107,9 +107,16 @@ const animate = () => {
 
 animate();
 
-let spaceAudio = new Audio("/static/music/space.mp3");
-spaceAudio.play();
+var spaceAudio = new Audio("/assets/audio/space.mp3")
+var promise = spaceAudio.play();
 
+if (promise !== undefined) {
+  promise.then(_ => {
+    spaceAudio.play();
+  }).catch(error => {
+    console.log(error);
+  });
+}
 
 // Timeline Animations
 const timeline = gsap.timeline({
