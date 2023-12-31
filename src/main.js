@@ -57,7 +57,7 @@ localGroup.add(earthLightMesh);
 
 // Create Earth Cloude Mesh
 const earthCloudeMaterial = new THREE.MeshBasicMaterial({
-  map: loader.load("public/textures/earth_clouds.jpg"),
+  map: loader.load("../public/textures/earth_clouds.jpg"),
   // transparent: true,
   opacity: 0.1,
   blending: THREE.AdditiveBlending
