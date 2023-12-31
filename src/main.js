@@ -42,14 +42,14 @@ const detail = 12;
 const geometry = new THREE.IcosahedronGeometry(1, detail);
 const loader = new THREE.TextureLoader();
 const material = new THREE.MeshStandardMaterial({
-  map: loader.load("public/textures/earth_day.jpg")
+  map: loader.load("/public/textures/earth_day.jpg")
 });
 const earthMesh = new THREE.Mesh(geometry, material);
 localGroup.add(earthMesh);
 
 // Create Earth Ligth
 const earthLightMaterial = new THREE.MeshBasicMaterial({
-  map: loader.load("public/textures/earth_light.jpg"),
+  map: loader.load("/public/textures/earth_light.jpg"),
   blending: THREE.AdditiveBlending
 });
 const earthLightMesh = new THREE.Mesh(geometry, earthLightMaterial);
@@ -57,7 +57,7 @@ localGroup.add(earthLightMesh);
 
 // Create Earth Cloude Mesh
 const earthCloudeMaterial = new THREE.MeshBasicMaterial({
-  map: loader.load("public/textures/earth_clouds.jpg"),
+  map: loader.load("/public/textures/earth_clouds.jpg"),
   // transparent: true,
   opacity: 0.1,
   blending: THREE.AdditiveBlending
