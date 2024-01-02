@@ -107,17 +107,6 @@ const animate = () => {
 
 animate();
 
-var spaceAudio = new Audio("static/audio/space.mp3")
-var promise = spaceAudio.play();
-
-if (promise !== undefined) {
-  promise.then(_ => {
-    spaceAudio.play();
-  }).catch(error => {
-    console.log(error);
-  });
-}
-
 // Timeline Animations
 const timeline = gsap.timeline({
   defaults: {
